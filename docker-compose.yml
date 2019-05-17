@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: flask-example
+    container_name: chunks-service
+    command: gunicorn -c gunicorn.conf app:app
+    network_mode: host
+    ports:
+      - "5000:5000"
