@@ -5,11 +5,8 @@ services:
     image: flask-example
     container_name: chunks-service
     command: gunicorn -c gunicorn.conf app:app
-    network_mode: host
     ports:
       - "5000:5000"
     sysctls:
       net.core.somaxconn: 10240
-
-
-
+      net.core.netdev_max_backlog: 65536
