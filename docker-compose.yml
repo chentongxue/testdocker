@@ -9,4 +9,3 @@ services:
       - "5000:5000"
     sysctls:
       net.core.somaxconn: 10240
-      net.core.netdev_max_backlog: 65536
