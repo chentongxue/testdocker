@@ -5,7 +5,6 @@ services:
     image: flask-example
     container_name: chunks-service
     command: gunicorn -c gunicorn.conf app:app
-    ports:
-      - "5000:5000"
+    network_mode: "host"
     sysctls:
       net.core.somaxconn: 10240
